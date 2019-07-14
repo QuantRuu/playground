@@ -24,12 +24,12 @@ public interface UserMapper {
     User getUser(Long id);
 
     @Insert("INSERT INTO user(username,password,age) VALUES(#{username}, #{password}, #{age})")
-    void insertUser(User user);
+    int insertUser(User user);
 
     @Update("UPDATE user SET username=#{username},age=#{age} WHERE user_id =#{userId}")
-    void updateUser(User user);
+    int updateUser(User user);
 
     @Delete("DELETE FROM user WHERE user_id =#{id}")
-    void deleteUser(Long id);
+    int deleteUser(Long id);
 
 }
